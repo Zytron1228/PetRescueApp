@@ -19,6 +19,8 @@
 		72CB7E6E273B133700A10A0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		72CB7E70273B133A00A10A0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72CB7E73273B133A00A10A0F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72CB7E7A273B14CC00A10A0F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		72CB7E7B273B15A500A10A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,9 @@
 			children = (
 				72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */,
 				72CB7E6E273B133700A10A0F /* ContentView.swift */,
+				72CB7E7A273B14CC00A10A0F /* Montserrat-Regular.ttf */,
 				72CB7E70273B133A00A10A0F /* Assets.xcassets */,
+				72CB7E7B273B15A500A10A0F /* Info.plist */,
 				72CB7E72273B133A00A10A0F /* Preview Content */,
 			);
 			path = PetRescueApp;
