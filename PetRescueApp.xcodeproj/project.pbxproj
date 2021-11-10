@@ -14,6 +14,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		721F39B3273C4E630059C058 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		721F39B4273C4FA20059C058 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		721F39DA273C64D00059C058 /* galactic-simple.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "galactic-simple.otf"; sourceTree = "<group>"; };
 		72CB7E69273B133700A10A0F /* PetRescueApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescueApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRescueAppApp.swift; sourceTree = "<group>"; };
 		72CB7E6E273B133700A10A0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +37,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721F39B5273C539F0059C058 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				72CB7E7A273B14CC00A10A0F /* Montserrat-Regular.ttf */,
+				721F39B3273C4E630059C058 /* Montserrat-Light.ttf */,
+				721F39B4273C4FA20059C058 /* Montserrat-ExtraLight.ttf */,
+				721F39DA273C64D00059C058 /* galactic-simple.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		72CB7E60273B133700A10A0F = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +69,7 @@
 			children = (
 				72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */,
 				72CB7E6E273B133700A10A0F /* ContentView.swift */,
-				72CB7E7A273B14CC00A10A0F /* Montserrat-Regular.ttf */,
+				721F39B5273C539F0059C058 /* Fonts */,
 				72CB7E70273B133A00A10A0F /* Assets.xcassets */,
 				72CB7E7B273B15A500A10A0F /* Info.plist */,
 				72CB7E72273B133A00A10A0F /* Preview Content */,
