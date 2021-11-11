@@ -5,25 +5,71 @@
 //  Created by PMStudent on 11/9/21.
 //
 
-import SwiftUI
+import SwiftUI // yes
 
 struct ContentView: View {
+    
+    @State var AnimalType: String = "Please Select"
+    @State var AnimalTypeSpecify: String = ""
+    
     var body: some View {
         VStack {
+            
+            Text("Lost and Found")
+                .bold()
             Spacer()
-            TextEditor(text: .constant("messagEk!?iohqtAa")).font(Font .custom("galactic-simple", size: 33))
-            
-        Text("Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz .!?$ 1234567890*")
-            .font(.custom("Montserrat-ExtraLight.ttf", size: 32))
-            .padding()
-            
-            Text("Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz .!?$ 1234567890*")
-                .padding()
-                .font(Font .custom("JoeMama-Obamaa", size: 32))
-            
-            Text("Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz .!?$ 1234567890*")
-                .font(.largeTitle)
-                .padding()
+            Form {
+                ScrollView {
+                    HStack {
+                        
+                        Text("Type of Animal:")
+                        
+                            Menu(AnimalType) {
+                                Button(action: {
+                                    AnimalType = "Please Select"
+                                }) {
+                                    Text("Please Select")
+                                }
+                                
+                                Button(action: {
+                                    AnimalType = "Cat"
+                                }) {
+                                    Text("Cat")
+                                }
+                                
+                                Button(action: {
+                                    AnimalType = "Dog"
+                                }) {
+                                    Text("Dog")
+                                }
+                                
+                                Button(action: {
+                                    AnimalType = "Attack Helicopter"
+                                }) {
+                                    Text("Attack Helicopter")
+                                }
+                                
+                                Button(action: {
+                                    AnimalType = "Other"
+                                }) {
+                                    Text("Other*")
+                                }
+                                
+                                Button(action: {
+                                    AnimalType = "Unsure"
+                                }) {
+                                    Text("Unsure*")
+                                }
+                            }
+                            .frame(width: 200, height: 25)
+                            .background(Color.gray)
+                            .cornerRadius(5)
+                            .foregroundColor(.black)
+                            .padding(.all)
+                    }
+                    TextField("*Type of Animal(if other or unsure)", text: $AnimalTypeSpecify)
+                }
+            }
         }
     }
 }
@@ -34,3 +80,16 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// Lost and found :  *
+//Give options to pick from
+//
+//Up load picture :
+//
+//type;  dog cat other
+//date :
+//location: hopefully attached to maps
+//color : tan brown black white multi
+//breed : shepherd bully lab  mixed
+//size small medium large x large
+// sex :
+//other: blue collar
