@@ -469,5 +469,6 @@ struct ContentView_Previews: PreviewProvider {
 //breed : shepherd bully lab  mixed *
 //size: small medium large x large *
 // gender : m/f/unsure *
+// age: 
 // other: blue collar *
 // submit button
