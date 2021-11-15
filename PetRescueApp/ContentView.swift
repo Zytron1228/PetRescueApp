@@ -8,7 +8,7 @@
 import SwiftUI // yes
 
 struct ContentView: View {
-    
+    @State private var date = Date()
     @State var AnimalType: String = "Please Select"
     @State var AnimalTypeSpecify: String = ""
     @State var ShowAnimalType2Error: Double = 0.0 // opacity for the error message. If this were a bool, 0.0 would be false and 1.0 would be true.
@@ -22,26 +22,43 @@ struct ContentView: View {
     @State var AnimalColorSpecify: String = ""
     @State var ShowAnimalColor2Error: Double = 0.0 // opacity for the error message.
     @State var AnimalColor2Error = ""
-    @State var AnimalColor2Error1: String = "Please Specify the Color(s) if you chose 'Other' or 'Mixed.'"
-    @State var AnimalBreed: String = "Please Select"
+    @State var AnimalColor2Error1: String = "Please Specify the color(s) if you chose 'Other' or 'Mixed.'"
     @State var AnimalBreedSpecify: String = ""
     @State var ShowAnimalBreed2Error: Double = 0.0 // opacity for the error message.
     @State var AnimalBreed2Error = ""
-    @State var AnimalBreed2Error1: String = "Please Specify the Color(s) if you chose 'Other' or 'Mixed.'"
+    @State var AnimalBreed2Error1: String = "Please Specify the breed. If you are not sure just say that."
+    @State var AnimalSize: String = "Please Select"
+    @State var AnimalGender: String = "Please Select"
+    @State var OtherInfo: String = ""
     
     var body: some View {
+//        Form {
+//        ScrollView{
+//            Group {
+//            VStack {
+//                HStack {
+//        DatePicker("Date:", selection: $date, displayedComponents: .date)
+//                Text("HEllo date")
+//                }
+//            }
+//                VStack {
+//                    TextField("hello", text: $OtherInfo)
+//                }
+//            }
+//        }
+//        }
         VStack {
-            
             Text("Lost and Found")
+                .font(.title2)
                 .bold()
             Divider()
             Spacer()
             Form {
                 ScrollView {
                     VStack {
-                        Group {
+                        Group { // uplaod pic
                             HStack {
-                                Text("Uplaod Picture")
+                                Text("Upload Picture")
                                 Spacer()
                                 Text("WIP")
                                     .frame(width: 75, height: 75)
@@ -52,7 +69,7 @@ struct ContentView: View {
                             
                             Spacer()
                         }
-                        Group {
+                        Group { //type
                             HStack {
                                 
                                 Text("Type of Animal:")
@@ -100,7 +117,7 @@ struct ContentView: View {
                                 .foregroundColor(.black)
                                 .padding(.all)
                             }
-                            VStack {
+                            VStack { // specify
                                 HStack(alignment: .center) {
                                     Text("*Specify Type of Animal:")
                                     TextField("*(if other or unsure)", text: $AnimalTypeSpecify)
@@ -145,12 +162,12 @@ struct ContentView: View {
                                             }
                                         })
                                 }
-                                Text(AnimalType2Error)
+                                Text(AnimalType2Error) //error message
                                     .font(.caption)
                                     .fontWeight(.light)
                                     .foregroundColor(.red)
                                     .multilineTextAlignment(.center)
-                                    .lineLimit(/*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
+                                    .lineLimit(3)
                                     .padding(.bottom)
                                     .opacity(ShowAnimalType2Error)
                                 
@@ -159,11 +176,11 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        Group {
+                        Group {     // color
                             HStack {
                                 Text("Color:")
                                 Spacer()
-                                Menu(AnimalColor) {
+                                Menu(AnimalColor) {  //options
                                     Button(action: {
                                         AnimalColor = "Please Select"
                                     }) {
@@ -262,17 +279,17 @@ struct ContentView: View {
                                     .fontWeight(.light)
                                     .foregroundColor(.red)
                                     .multilineTextAlignment(.center)
-                                    .lineLimit(/*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
+                                    .lineLimit(3)
                                     .padding(.bottom)
                                     .opacity(ShowAnimalColor2Error)
                                 
                             }
                         }
-                        Group {
+                        Group { //location&date
                             
                             Spacer()
                             
-                            HStack(alignment: .center) {
+                            HStack(alignment: .center) { //location
                                 Text("Location:")
                                 Spacer()
                                 Text("WIP")
@@ -284,9 +301,8 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            HStack(alignment: .center) {
-                                Text("Date:")
-                                //                            DatePicker(selection: .constant(Date()), label: { Text("Date") })
+                            HStack(alignment: .center) { // date
+//                                DatePicker("Date:", selection: $date, displayedComponents: .date)
                                 Spacer()
                                 Text("WIP")
                                     .frame(width: 50, height: 50)
@@ -298,69 +314,77 @@ struct ContentView: View {
                             Spacer()
                             
                         }
-                        Group {
-                            HStack { // needs work for other animals, current list is only for dogs.
-                                Text("Breed:")
+                        
+                        Group { //breed
+                            VStack {
+                                HStack(alignment: .center) {
+                                    Text("Breed:")
+                                    TextField(" Breed", text: $AnimalBreedSpecify)
+                                        .onAppear(perform: {
+                                            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
+                                                
+                                                    if AnimalBreedSpecify == "" {
+                                                        AnimalBreed2Error = AnimalBreed2Error1
+                                                        ShowAnimalBreed2Error = 1.0
+                                                    }
+                                                    else {
+                                                        AnimalBreed2Error = ""
+                                                        ShowAnimalBreed2Error = 0.0
+                                                    }
+                                            }
+                                        })
+                                }
+                                Text(AnimalBreed2Error)
+                                    .font(.caption)
+                                    .fontWeight(.light)
+                                    .foregroundColor(.blue)
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(3)
+                                    .padding(.bottom)
+                                    .opacity(ShowAnimalBreed2Error)
+                            }
+                            Spacer()
+                        }
+                        
+                        Group { // size
+                            HStack {
+                                Text("Size:")
                                 Spacer()
-                                Menu(AnimalBreed) {
+                                Menu(AnimalSize) {
                                     Button(action: {
-                                        AnimalBreed = "Please Select"
+                                        AnimalSize = "Please Select"
                                     }) {
                                         Text("Please Select")
                                     }
                                     
                                     Button(action: {
-                                        AnimalBreed = "Sheperd"
+                                        AnimalSize = "Tiny"
                                     }) {
-                                        Text("Sheperd")
+                                        Text("Tiny")
                                     }
                                     
                                     Button(action: {
-                                        AnimalBreed = "Bull"
+                                        AnimalSize = "Small"
                                     }) {
-                                        Text("Bull")
+                                        Text("Small")
                                     }
                                     
                                     Button(action: {
-                                        AnimalBreed = "Lab"
+                                        AnimalSize = "Medium"
                                     }) {
-                                        Text("Lab")
+                                        Text("Medium")
                                     }
                                     
                                     Button(action: {
-                                        AnimalBreed = "Poodle"
+                                        AnimalSize = "Large"
                                     }) {
-                                        Text("Poodle")
+                                        Text("Large")
                                     }
                                     
                                     Button(action: {
-                                        AnimalBreed = "Chihuahua"
+                                        AnimalSize = "Extra Large"
                                     }) {
-                                        Text("Chihuahua")
-                                    }
-                                    
-                                    Button(action: {
-                                        AnimalBreed = "Pug"
-                                    }) {
-                                        Text("Pug")
-                                    }
-                                    
-                                    Button(action: {
-                                        AnimalBreed = "Maltese"
-                                    }) {
-                                        Text("Maltese")
-                                    }
-                                    
-                                    Button(action: {
-                                        AnimalBreed = "Mixed"
-                                    }) {
-                                        Text("Mixed*")
-                                    }
-                                    
-                                    Button(action: {
-                                        AnimalBreed = "Other/Unsure"
-                                    }) {
-                                        Text("Other/Unsure*")
+                                        Text("Extra Large")
                                     }
                                     
                                 }
@@ -371,66 +395,60 @@ struct ContentView: View {
                                 .padding(.all)
                                 
                             }
-                            Text("(please pick other if it's not a dog)")
-                                .font(.caption2)
                             
-                            VStack {
-                                HStack(alignment: .center) {
-                                    Text("*Specify Breed of Animal:")
-                                    TextField("*(if other/unsure or mixed)", text: $AnimalColorSpecify)
-                                        .onAppear(perform: {
-                                            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
-                                                if AnimalBreed == "Other" {
-                                                    if AnimalBreedSpecify == "" {
-                                                        AnimalBreed2Error = AnimalBreed2Error1
-                                                        ShowAnimalBreed2Error = 1.0
-                                                    }
-                                                    
-                                                    else {
-                                                        AnimalBreed2Error = ""
-                                                        ShowAnimalBreed2Error = 0.0
-                                                    }
-                                                }
-                                                
-                                                else if AnimalBreed == "Mixed" {
-                                                    if AnimalBreedSpecify == ""    {
-                                                        AnimalBreed2Error = AnimalBreed2Error1
-                                                        ShowAnimalBreed2Error = 1.0
-                                                    }
-                                                    else {
-                                                        AnimalBreed2Error = ""
-                                                        ShowAnimalBreed2Error = 0.0
-                                                    }
-                                                }
-                                                
-                                                else {
-                                                    AnimalBreed2Error = ""
-                                                    ShowAnimalBreed2Error = 0.0
-                                                }
-                                            }
-                                        })
+                            Spacer()
+                        }
+                        Group { // gender
+                            HStack {
+                                Text("Gender:")
+                                Spacer()
+                                Menu(AnimalGender) {
+                                    Button(action: {
+                                        AnimalGender = "Please Select"
+                                    }) {
+                                        Text("Please Select")
+                                    }
+                                    
+                                    Button(action: {
+                                        AnimalGender = "Male"
+                                    }) {
+                                        Text("Male")
+                                    }
+                                    
+                                    Button(action: {
+                                        AnimalGender = "Female"
+                                    }) {
+                                        Text("Female")
+                                    }
+                                    
+                                    Button(action: {
+                                        AnimalGender = "Unsure"
+                                    }) {
+                                        Text("Unsure")
+                                    }
+                                    
                                 }
-                                Text(AnimalBreed2Error)
-                                    .font(.caption)
-                                    .fontWeight(.light)
-                                    .foregroundColor(.red)
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(/*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/)
-                                    .padding(.bottom)
-                                    .opacity(ShowAnimalBreed2Error)
+                                .frame(width: 150, height: 30)
+                                .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.9))
+                                .cornerRadius(5)
+                                .foregroundColor(.black)
+                                .padding(.all)
+                                
                             }
                             Spacer()
                         }
-                        
                         Group {
-                            
+                            VStack {
+                                Text("Other Information:")
+                                TextField("Other Information", text: $OtherInfo)
+                            }
                         }
                         
                     }
                 }
             }
         }
-    }    
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -449,6 +467,6 @@ struct ContentView_Previews: PreviewProvider {
 //location: hopefully attached to maps * wip
 //color : tan brown black white multi *
 //breed : shepherd bully lab  mixed *
-//size: small medium large x large
-// gender : m/f/unsure
-//other: blue collar
+//size: small medium large x large *
+// gender : m/f/unsure *
+// other: blue collar *
