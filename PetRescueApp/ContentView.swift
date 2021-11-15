@@ -470,3 +470,4 @@ struct ContentView_Previews: PreviewProvider {
 //size: small medium large x large *
 // gender : m/f/unsure *
 // other: blue collar *
+// submit button
