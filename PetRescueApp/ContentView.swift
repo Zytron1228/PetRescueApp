@@ -300,18 +300,21 @@ struct ContentView: View {
                                     .frame(width: 50, height: 50)
                                     .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                     .cornerRadius(10)
+                                    .offset(x: 20)
                                 Spacer()
                             }
                             
                             Spacer()
                             
                             HStack(alignment: .center) { // date
+                                Text("Date:")
 //                                DatePicker("Date:", selection: $date, displayedComponents: .date)
                                 Spacer()
                                 Text("WIP")
                                     .frame(width: 50, height: 50)
                                     .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                     .cornerRadius(10)
+                                    .offset(x: 35)
                                 Spacer()
                             }
                             
