@@ -30,6 +30,7 @@ struct ContentView: View {
     @State var AnimalSize: String = "Please Select"
     @State var AnimalGender: String = "Please Select"
     @State var OtherInfo: String = ""
+    @State var Age: String = ""
     
     var body: some View {
 //        Form {
@@ -64,6 +65,7 @@ struct ContentView: View {
                                     .frame(width: 75, height: 75)
                                     .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                     .cornerRadius(10)
+                                    .offset(x: 20)
                                 Spacer()
                             }
                             
@@ -73,6 +75,7 @@ struct ContentView: View {
                             HStack {
                                 
                                 Text("Type of Animal:")
+                                    .offset(x: -19)
                                 
                                 Menu(AnimalType) {
                                     Button(action: {
@@ -116,6 +119,7 @@ struct ContentView: View {
                                 .cornerRadius(5)
                                 .foregroundColor(.black)
                                 .padding(.all)
+                                .offset(x: 15)
                             }
                             VStack { // specify
                                 HStack(alignment: .center) {
@@ -437,11 +441,21 @@ struct ContentView: View {
                             }
                             Spacer()
                         }
+                        
+                        Group {
+                            VStack {
+                                Text("Age:")
+                                TextField("If you're not sure make an aproximate guess.", text: $Age)
+                            }
+                            Spacer()
+                        }
+                        
                         Group {
                             VStack {
                                 Text("Other Information:")
                                 TextField("Other Information", text: $OtherInfo)
                             }
+                            Spacer()
                         }
                         
                     }
