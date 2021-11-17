@@ -29,8 +29,8 @@ struct ContentView: View {
     @State var AnimalBreed2Error1: String = "Please Specify the breed. If you are not sure just say that."
     @State var AnimalSize: String = "Please Select"
     @State var AnimalGender: String = "Please Select"
-    @State var OtherInfo: String = ""
-    @State var Age: String = ""
+    @State var Age: String = "Please Select"
+    @State var OtherInfo: String = "He likes Mexican and African music, and he hates the color red. He is skilled at playing video games. If you give him a pen he will draw his giraffe friend from Madagascar. Also he speaks English don't be afraid."
     
     var body: some View {
         //        Form {
@@ -77,11 +77,6 @@ struct ContentView: View {
                                 .offset(x: -19)
                             
                             Menu(AnimalType) {
-                                Button(action: {
-                                    AnimalType = "Please Select"
-                                }) {
-                                    Text("Please Select")
-                                }
                                 
                                 Button(action: {
                                     AnimalType = "Cat"
@@ -121,9 +116,10 @@ struct ContentView: View {
                             .offset(x: 15)
                         }
                         VStack { // specify
-                            HStack(alignment: .center) {
+                            VStack(alignment: .center) {
                                 Text("*Specify Type of Animal:")
                                 TextField("*(if other or unsure)", text: $AnimalTypeSpecify)
+                                    .lineLimit(8)
                                     .onAppear(perform: {
                                         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
                                             if AnimalType == "Other" {
@@ -184,11 +180,6 @@ struct ContentView: View {
                             Text("Color:")
                             Spacer()
                             Menu(AnimalColor) {  //options
-                                Button(action: {
-                                    AnimalColor = "Please Select"
-                                }) {
-                                    Text("Please Select")
-                                }
                                 
                                 Button(action: {
                                     AnimalColor = "Black"
@@ -238,13 +229,15 @@ struct ContentView: View {
                             .cornerRadius(5)
                             .foregroundColor(.black)
                             .padding(.all)
+                            .offset(x: -3)
                             
                         }
                         
                         VStack {
-                            HStack(alignment: .center) {
+                            VStack(alignment: .center) {
                                 Text("*Specify Color of Animal:")
                                 TextField("*(if other or multi)", text: $AnimalColorSpecify)
+                                    .lineLimit(8)
                                     .onAppear(perform: {
                                         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
                                             if AnimalColor == "Other" {
@@ -299,7 +292,7 @@ struct ContentView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                 .cornerRadius(10)
-                                .offset(x: 20)
+                                .offset(x: 50)
                             Spacer()
                         }
                         
@@ -313,7 +306,7 @@ struct ContentView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                 .cornerRadius(10)
-                                .offset(x: 35)
+                                .offset(x: 65)
                             Spacer()
                         }
                         
@@ -323,7 +316,7 @@ struct ContentView: View {
                     
                     Group { //breed
                         VStack {
-                            HStack(alignment: .center) {
+                            VStack(alignment: .center) {
                                 Text("Breed:")
                                 TextField(" Breed", text: $AnimalBreedSpecify)
                                     .onAppear(perform: {
@@ -357,11 +350,6 @@ struct ContentView: View {
                             Text("Size:")
                             Spacer()
                             Menu(AnimalSize) {
-                                Button(action: {
-                                    AnimalSize = "Please Select"
-                                }) {
-                                    Text("Please Select")
-                                }
                                 
                                 Button(action: {
                                     AnimalSize = "Tiny"
@@ -409,12 +397,7 @@ struct ContentView: View {
                             Text("Gender:")
                             Spacer()
                             Menu(AnimalGender) {
-                                Button(action: {
-                                    AnimalGender = "Please Select"
-                                }) {
-                                    Text("Please Select")
-                                }
-                                
+
                                 Button(action: {
                                     AnimalGender = "Male"
                                 }) {
@@ -445,9 +428,48 @@ struct ContentView: View {
                     }
                     
                     Group {
-                        VStack {
+                        HStack {
                             Text("Age:")
-                            TextField("If you're not sure make an aproximate guess.", text: $Age)
+                            Spacer()
+                            Menu(Age) {
+                                
+                                Button(action: {
+                                    Age = "Very Young"
+                                }) {
+                                    Text("Very Young")
+                                }
+                                
+                                Button(action: {
+                                    Age = "Young"
+                                }) {
+                                    Text("Young")
+                                }
+                                
+                                Button(action: {
+                                    Age = "Middle Aged"
+                                }) {
+                                    Text("Middle Aged")
+                                }
+                                
+                                Button(action: {
+                                    Age = "Old"
+                                }) {
+                                    Text("Old")
+                                }
+                                
+                                Button(action: {
+                                    Age = "Unsure"
+                                }) {
+                                    Text("Unsure")
+                                }
+                                
+                            }
+                            .frame(width: 150, height: 30)
+                            .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.9))
+                            .cornerRadius(5)
+                            .foregroundColor(.black)
+                            .padding(.all)
+
                         }
                         Spacer()
                     }
@@ -455,7 +477,12 @@ struct ContentView: View {
                     Group {
                         VStack {
                             Text("Other Information:")
-                            TextField("Other Information", text: $OtherInfo)
+//                            TextField("Other Information", text: $OtherInfo)
+//                                .multilineTextAlignment(.center)
+//                                .lineLimit(16)
+                            
+                            TextEditor(text: $OtherInfo)
+
                         }
                         Spacer()
                     }
