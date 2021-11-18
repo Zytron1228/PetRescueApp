@@ -23,14 +23,14 @@ struct ContentView: View {
     @State var ShowAnimalColor2Error: Double = 0.0 // opacity for the error message.
     @State var AnimalColor2Error = ""
     @State var AnimalColor2Error1: String = "Please Specify the color(s) if you chose 'Other' or 'Mixed.'"
-    @State var AnimalBreedSpecify: String = ""
-    @State var ShowAnimalBreed2Error: Double = 0.0 // opacity for the error message.
-    @State var AnimalBreed2Error = ""
-    @State var AnimalBreed2Error1: String = "Please Specify the breed. If you are not sure just say that."
+    @State var AnimalBreed: String = ""
+    @State var ShowAnimalBreedError: Double = 0.0 // opacity for the error message.
+    @State var AnimalBreedError = ""
+    @State var AnimalBreedError1: String = "Please Specify the breed. If you are not sure just say that."
     @State var AnimalSize: String = "Please Select"
     @State var AnimalGender: String = "Please Select"
     @State var Age: String = "Please Select"
-    @State var OtherInfo: String = "He likes Mexican and African music, and he hates the color red. He is skilled at playing video games. If you give him a pen he will draw his giraffe friend from Madagascar. Also he speaks English don't be afraid."
+    @State var OtherInfo: String = ""
     
     var body: some View {
         //        Form {
@@ -117,8 +117,21 @@ struct ContentView: View {
                         }
                         VStack { // specify
                             VStack(alignment: .center) {
-                                Text("*Specify Type of Animal:")
-                                TextField("*(if other or unsure)", text: $AnimalTypeSpecify)
+                                VStack {
+                                    List {
+                                            Text("*Specify Type of Animal:")
+                                        GroupBox() {
+                                            
+                                            ZStack {
+                                                
+                                                TextEditor(text: $AnimalTypeSpecify)
+                                                    .opacity(1)
+                                                Text(AnimalTypeSpecify)
+                                                    .opacity(0)
+                                                    .padding(.all)
+                                            }
+                                        }
+                                    }
                                     .lineLimit(8)
                                     .onAppear(perform: {
                                         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
@@ -160,6 +173,7 @@ struct ContentView: View {
                                             }
                                         }
                                     })
+                                }
                             }
                             Text(AnimalType2Error) //error message
                                 .font(.caption)
@@ -235,9 +249,21 @@ struct ContentView: View {
                         
                         VStack {
                             VStack(alignment: .center) {
-                                Text("*Specify Color of Animal:")
-                                TextField("*(if other or multi)", text: $AnimalColorSpecify)
-                                    .lineLimit(8)
+                                VStack {
+                                    List {
+                                            Text("*Specify Color of Animal:")
+                                        GroupBox() {
+                                            
+                                            ZStack {
+                                                
+                                                TextEditor(text: $AnimalColorSpecify)
+                                                    .opacity(1)
+                                                Text(AnimalColorSpecify)
+                                                    .opacity(0)
+                                                    .padding(.all)
+                                            }
+                                        }
+                                    }
                                     .onAppear(perform: {
                                         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
                                             if AnimalColor == "Other" {
@@ -269,6 +295,7 @@ struct ContentView: View {
                                             }
                                         }
                                     })
+                                }
                             }
                             Text(AnimalColor2Error)
                                 .font(.caption)
@@ -317,30 +344,45 @@ struct ContentView: View {
                     Group { //breed
                         VStack {
                             VStack(alignment: .center) {
-                                Text("Breed:")
-                                TextField(" Breed", text: $AnimalBreedSpecify)
+                                VStack {
+                                    List {
+                                            Text("Breed:")
+                                        GroupBox() {
+                                            
+                                            ZStack {
+                                                
+                                                TextEditor(text: $AnimalBreed)
+                                                    .opacity(1)
+                                                Text(AnimalBreed)
+                                                    .opacity(0)
+                                                    .padding(.all)
+                                            }
+                                        }
+                                    }
                                     .onAppear(perform: {
                                         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {_ in
                                             
-                                            if AnimalBreedSpecify == "" {
-                                                AnimalBreed2Error = AnimalBreed2Error1
-                                                ShowAnimalBreed2Error = 1.0
+                                            if AnimalBreed == "" {
+                                                AnimalBreedError = AnimalBreedError1
+                                                ShowAnimalBreedError = 1.0
                                             }
                                             else {
-                                                AnimalBreed2Error = ""
-                                                ShowAnimalBreed2Error = 0.0
+                                                AnimalBreedError = ""
+                                                ShowAnimalBreedError = 0.0
                                             }
                                         }
                                     })
+                                }
+                                
                             }
-                            Text(AnimalBreed2Error)
+                            Text(AnimalBreedError)
                                 .font(.caption)
                                 .fontWeight(.light)
                                 .foregroundColor(.blue)
                                 .multilineTextAlignment(.center)
                                 .lineLimit(3)
                                 .padding(.bottom)
-                                .opacity(ShowAnimalBreed2Error)
+                                .opacity(ShowAnimalBreedError)
                         }
                         Spacer()
                     }
@@ -397,7 +439,7 @@ struct ContentView: View {
                             Text("Gender:")
                             Spacer()
                             Menu(AnimalGender) {
-
+                                
                                 Button(action: {
                                     AnimalGender = "Male"
                                 }) {
@@ -434,9 +476,9 @@ struct ContentView: View {
                             Menu(Age) {
                                 
                                 Button(action: {
-                                    Age = "Very Young"
+                                    Age = "Infant"
                                 }) {
-                                    Text("Very Young")
+                                    Text("Infant")
                                 }
                                 
                                 Button(action: {
@@ -446,9 +488,9 @@ struct ContentView: View {
                                 }
                                 
                                 Button(action: {
-                                    Age = "Middle Aged"
+                                    Age = "Adult"
                                 }) {
-                                    Text("Middle Aged")
+                                    Text("Adult")
                                 }
                                 
                                 Button(action: {
@@ -462,31 +504,39 @@ struct ContentView: View {
                                 }) {
                                     Text("Unsure")
                                 }
-                                
                             }
                             .frame(width: 150, height: 30)
                             .background(Color(hue: 0.0, saturation: 0.0, brightness: 0.9))
                             .cornerRadius(5)
                             .foregroundColor(.black)
                             .padding(.all)
-
+                            
                         }
                         Spacer()
                     }
                     
                     Group {
                         VStack {
-                            Text("Other Information:")
-//                            TextField("Other Information", text: $OtherInfo)
-//                                .multilineTextAlignment(.center)
-//                                .lineLimit(16)
-                            
-                            TextEditor(text: $OtherInfo)
-
+                            List {
+                                Text("Other Information:")
+                                GroupBox() {
+                                    
+                                    ZStack {
+                                        
+                                        TextEditor(text: $OtherInfo)
+                                            .multilineTextAlignment(.center)
+                                            .opacity(1)
+                                        Text(OtherInfo)
+                                            .multilineTextAlignment(.center)
+                                            .opacity(0)
+                                            .padding(.all)
+                                    }
+                                }
+                            }
                         }
                         Spacer()
                     }
-                    
+            
                 }
             }
         }
@@ -511,6 +561,6 @@ struct ContentView_Previews: PreviewProvider {
 //breed : shepherd bully lab  mixed *
 //size: small medium large x large *
 // gender : m/f/unsure *
-// age:
+// age: *
 // other: blue collar *
 // submit button
