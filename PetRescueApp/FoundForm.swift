@@ -308,7 +308,7 @@ struct FoundForm: View {
                         
                         HStack(alignment: .center) { // date
                             Text("Date Found:")
-                            //                                DatePicker("Date:", selection: $date, displayedComponents: .date)
+                            //                                DatePicker("Date:", selection: $Fdate, displayedComponents: .Fdate)
                             Spacer()
                             Text("WIP")
                                 .frame(width: 50, height: 50)

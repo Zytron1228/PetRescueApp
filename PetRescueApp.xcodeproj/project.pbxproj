@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		729B3F4D274D73F40052C165 /* LostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B3F4C274D73F40052C165 /* LostForm.swift */; };
 		729B3F4F274D73FE0052C165 /* FoundForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B3F4E274D73FE0052C165 /* FoundForm.swift */; };
+		729B3F51274D7F620052C165 /* AAA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 729B3F50274D7F620052C165 /* AAA.mp3 */; };
+		729B3F53274D849E0052C165 /* Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B3F52274D849E0052C165 /* Forms.swift */; };
 		72CB7E6D273B133700A10A0F /* PetRescueAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */; };
 		72CB7E6F273B133700A10A0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB7E6E273B133700A10A0F /* ContentView.swift */; };
 		72CB7E71273B133A00A10A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72CB7E70273B133A00A10A0F /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		729B3F4C274D73F40052C165 /* LostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostForm.swift; sourceTree = "<group>"; };
 		729B3F4E274D73FE0052C165 /* FoundForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundForm.swift; sourceTree = "<group>"; };
+		729B3F50274D7F620052C165 /* AAA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AAA.mp3; sourceTree = "<group>"; };
+		729B3F52274D849E0052C165 /* Forms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forms.swift; sourceTree = "<group>"; };
 		72CB7E69273B133700A10A0F /* PetRescueApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetRescueApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRescueAppApp.swift; sourceTree = "<group>"; };
 		72CB7E6E273B133700A10A0F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,7 @@
 		72CB7E60273B133700A10A0F = {
 			isa = PBXGroup;
 			children = (
+				729B3F50274D7F620052C165 /* AAA.mp3 */,
 				72CB7E6B273B133700A10A0F /* PetRescueApp */,
 				72CB7E6A273B133700A10A0F /* Products */,
 			);
@@ -57,6 +62,7 @@
 			children = (
 				72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */,
 				72CB7E6E273B133700A10A0F /* ContentView.swift */,
+				729B3F52274D849E0052C165 /* Forms.swift */,
 				729B3F4C274D73F40052C165 /* LostForm.swift */,
 				729B3F4E274D73FE0052C165 /* FoundForm.swift */,
 				72CB7E70273B133A00A10A0F /* Assets.xcassets */,
@@ -133,6 +139,7 @@
 			files = (
 				72CB7E74273B133A00A10A0F /* Preview Assets.xcassets in Resources */,
 				72CB7E71273B133A00A10A0F /* Assets.xcassets in Resources */,
+				729B3F51274D7F620052C165 /* AAA.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72CB7E6F273B133700A10A0F /* ContentView.swift in Sources */,
+				729B3F53274D849E0052C165 /* Forms.swift in Sources */,
 				72CB7E6D273B133700A10A0F /* PetRescueAppApp.swift in Sources */,
 				729B3F4F274D73FE0052C165 /* FoundForm.swift in Sources */,
 				729B3F4D274D73F40052C165 /* LostForm.swift in Sources */,

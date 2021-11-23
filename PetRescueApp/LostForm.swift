@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct LostForm: View {
-    
+    @State var the123 = Int.random(in: 1...3)
+    @State var audioPlayer: AVAudioPlayer!
     @State private var Ldate = Date()
     @State var AnimalType: String = "Please Select"
     @State var AnimalTypeSpecify: String = ""
@@ -16,6 +18,7 @@ struct LostForm: View {
     @State var AnimalType2Error = ""
     @State var AnimalType2Error1: String = "Please specify what type of animal if you chose 'Other' or explain if 'Unsure'"
     @State var AnimalType2Error2: String = "Please provide an explanation if you chose 'Unsure'"
+    @State var AnimalType2Error3: String = "*Error: humans are not pets. To report a missing person, go elsewhere."
     @State var AnimalType1Error = ""
     @State var AnimalType1Error1 = "Please Select an Animal"
     @State var AnimalColor: String = "Please Select"
@@ -74,7 +77,6 @@ struct LostForm: View {
                                 }) {
                                     Text("Dog")
                                 }
-
                                 
                                 Button(action: {
                                     AnimalType = "Other"
@@ -307,7 +309,7 @@ struct LostForm: View {
                         
                         HStack(alignment: .center) { // date
                             Text("Last Seen:")
-                            //                                DatePicker("Date:", selection: $date, displayedComponents: .date)
+                            //                                DatePicker("Date:", selection: $Ldate, displayedComponents: .Ldate)
                             Spacer()
                             Text("WIP")
                                 .frame(width: 50, height: 50)
@@ -448,6 +450,14 @@ struct LostForm: View {
                         }
                         Spacer()
                     }
+                    .onAppear(perform: {
+                        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) {_ in
+                            the123 = Int.random(in: 1...10)
+                            if the123 == 3 {
+                                audioPlayer.play()
+                            }
+                        }
+                    })
                     
                     Group {
                         HStack {
@@ -511,6 +521,13 @@ struct LostForm: View {
                                             .opacity(0)
                                             .padding(.all)
                                     }
+                                    .onAppear(perform: {
+                                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
+                                            if OtherInfo == "Rickroll me" {
+                                                audioPlayer.play()
+                                            }
+                                        }
+                                    })
                                 }
                             }
                         }
@@ -519,6 +536,12 @@ struct LostForm: View {
             
                 }
             }
+        }
+        .onAppear {
+            let sound = Bundle.main.path(forResource: "AAA", ofType: "mp3")
+           
+            audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+
         }
     }
 }
