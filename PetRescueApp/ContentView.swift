@@ -9,44 +9,54 @@ import SwiftUI // yes
 
 struct ContentView: View {
 
-    
     var body: some View {
         NavigationView {
-            HStack {
-            VStack {
-//                NavigationLink(destination: Home()) {
-//                    Label("Home", systemImage: "list.dash")
-//                }
-//                NavigationLink(destination: Profile()) {
-//                    Label("Profile", systemImage: "list.dash")
-//                }
-                NavigationLink(destination: Forms()) {
-                    Label("Submit a Form", systemImage: "list.dash")
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                NavigationLink(destination: Profile()) {
+                    Label("Profile", systemImage: "person.crop.circle")
                 }
+                .padding(1.0)
+                NavigationLink(destination: Home()) {
+                    Label("Home", systemImage: "house.fill")
+                }
+                .padding(1.0)
+                NavigationLink(destination: Forms()) {
+                    Label("Submit a Form", systemImage: "list.bullet.rectangle.portrait.fill")
+                }
+                .padding(1.0)
 //                NavigationLink(destination: LostForm()) {
 //                    Label("Subit Lost Pet", systemImage: "list.dash")
 //                }
+//                .padding(1.0)
 //                NavigationLink(destination: FoundForm()) {
 //                    Label("Submit Found Pet", systemImage: "list.dash")
 //                }
-//                NavigationLink(destination: ListView()) {
-//                    Label("Search Pets", systemImage: "list.dash")
-//                }
+//                .padding(1.0)
+                NavigationLink(destination: ListView()) {
+                    Label("Search Pets", systemImage: "magnifyingglass")
+                }
+                .padding(1.0)
 //
-//                NavigationLink(destination: Settings()) {
-//                    Label("Settings", systemImage: "list.dash")
-//                }
-//                NavigationLink(destination: Help()) {
-//                    Label("Help", systemImage: "list.dash")
-//                }
-//                NavigationLink(destination: Info()) {
-//                    Label("Info", systemImage: "list.dash")
-//                }
-            }
+                NavigationLink(destination: Settings()) {
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
+                .padding(1.0)
+                NavigationLink(destination: Help()) {
+                    Label("Help", systemImage: "questionmark.circle.fill")
+                }
+                .padding(1.0)
+                NavigationLink(destination: Info()) {
+                    Label("Info", systemImage: "info.circle")
+                }
+                .padding(1.0)
+                    NavigationLink(destination: Home()) {
+                        Label("[Test]", systemImage: "pawprint.fill")
+                    }
+                    .padding(1.0)
+                }
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 Divider()
-                Spacer()
-                Spacer()
-                Spacer()
                 Spacer()
             }
         }

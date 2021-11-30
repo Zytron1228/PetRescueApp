@@ -42,7 +42,7 @@ struct FoundForm: View {
             Spacer()
             Form {
                 VStack {
-                    Group { // uplaod pic
+                    Group { // upload pic
                         HStack {
                             Text("Upload Picture")
                             Spacer()

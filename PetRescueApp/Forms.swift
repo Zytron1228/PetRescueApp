@@ -5,7 +5,7 @@
 //  Created by PMStudent on 11/23/21.
 //
 
-import SwiftUI
+import SwiftUI //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAÆAAAAAAAAAAAAAAAAAAAAAAA
 
 struct Forms: View {
     let color1 = Color.blue
@@ -22,6 +22,8 @@ struct Forms: View {
                             .foregroundColor(Color.yellow)
                             .bold()
                     }
+                    .navigationBarHidden(true)
+                    
                     Spacer()
                     NavigationLink(destination: FoundForm()) {
                         Text("I have Found A Pet")
@@ -30,10 +32,12 @@ struct Forms: View {
                             .foregroundColor(Color.yellow)
                             .bold()
                     }
+                    .navigationBarHidden(true)
                     Spacer()
                 }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 
