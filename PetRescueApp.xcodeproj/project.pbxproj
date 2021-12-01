@@ -74,10 +74,10 @@
 			children = (
 				72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */,
 				7249F7EE2755691D00A1D559 /* SideBarMenu.swift */,
-				7297338D27555B8C00C81A72 /* ListView.swift */,
 				72973387275554EF00C81A72 /* Home.swift */,
 				7297338B2755597300C81A72 /* Profile.swift */,
 				729B3F52274D849E0052C165 /* Forms.swift */,
+				7297338D27555B8C00C81A72 /* ListView.swift */,
 				72973389275556FA00C81A72 /* Settings.swift */,
 				7297339127555CA000C81A72 /* Help.swift */,
 				7297338F27555C9400C81A72 /* Info.swift */,

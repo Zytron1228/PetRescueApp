@@ -37,7 +37,7 @@ struct Forms: View {
                 }
             }
         }
-        .navigationBarHidden(true)
+//        .foregroundColor(.black)
     }
 }
 

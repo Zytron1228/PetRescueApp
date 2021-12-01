@@ -10,25 +10,25 @@ import SwiftUI
 struct Home: View {
     @State var showMenu = false
     var body: some View {
-        //        return NavigationView {
-        VStack {
-            
-            GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    MainView(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                    if self.showMenu {
-                        SideBarMenu(showMenu: self.$showMenu)
-                            .frame(width: 400)
-                            .edgesIgnoringSafeArea(.top)
-                            .offset(x: -120)
+        return NavigationView {
+            VStack {
+                
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        MainView(showMenu: self.$showMenu)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                        if self.showMenu {
+                            SideBarMenu(showMenu: self.$showMenu)
+                                .frame(width: 175)
+                                .edgesIgnoringSafeArea(.all)
+                            
+                        }
                     }
                 }
             }
         }
-        //        }
-        //        .navigationBarTitle("Side Menu", displayMode: .inline)
-        //        .navigationBarHidden(true)
+        //        .navigationBarTitle("Side Menu", displayMode: .)
+        .navigationBarHidden(true)
     }
 }
 
@@ -36,21 +36,47 @@ struct MainView: View {
     @Binding var showMenu: Bool
     var body: some View {
         VStack {
-            Text("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAA")
-            Button(action: {
-                print("Open Menu")
-                if showMenu == false {
-                    self.showMenu = true
-                } else if showMenu == true {
-                    self.showMenu = false
+            VStack {
+                HStack {
+                    
+                    Button(action: {
+                        print("Open Menu")
+                        if showMenu == false {
+                            self.showMenu = true
+                        } else if showMenu == true {
+                            self.showMenu = false
+                        }
+                    }){
+                        Image(systemName: "line.3.horizontal")
+                            .resizable()
+                            
+                    }
+                    .frame(width: 25, height: 15)
+                    
+                    Spacer()
                 }
-            }){
-                Image(systemName: "line.3.horizontal")
+                
+                Text("Home")
+                    .bold()
             }
+            .padding(.top, 45)
             
+            Spacer()
+            //            .position(x: 30, y: 60)
+            VStack {
+                Spacer()
+                Text("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAÆA\nAA This is placeholder text. This is the homepage.\nAAAAAAAAAAAAAAAAAAAAA")
+                Image(systemName: "pawprint.fill")
+                    .padding()
+                Spacer()
+            }
+            .padding(.all)
         }
-        .background(Color.red)
+        .frame(width: 428, height: 929)
+        .edgesIgnoringSafeArea(.all)
+        .background(Color.blue)
         .ignoresSafeArea()
+        
     }
     
 }

@@ -10,17 +10,18 @@ import SwiftUI
 struct SideBarMenu: View {
     @Binding var showMenu: Bool
     var body: some View {
-        NavigationView {
-            
+//        NavigationView {
             ZStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
+                        Spacer()
                         Group {
                             NavigationLink(destination: Home()) {
                                 Label("Home", systemImage: "house.fill")
                             }
                             .offset(x: -3)
-                            .padding(1.0)
+                            .padding([.leading, .bottom, .trailing], 1.0)
+                            .padding(.top, 75.0)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                             
                             NavigationLink(destination: Profile()) {
@@ -61,18 +62,20 @@ struct SideBarMenu: View {
                             .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                             
                         }
-//                        .offset(x: 20, y: 100)
+//                        .offset(y: 75)
+                      .padding(10)
                         Spacer()
                     }
+                    Spacer()
                 }
             }
-            .frame(maxWidth: 200, alignment: .leading)
+            .frame(maxWidth: 400, alignment: .leading)
             .background(Color.black)
             
-            .edgesIgnoringSafeArea(.top)
+            .edgesIgnoringSafeArea(.all)
             
             
-        }
+//        }
 //        .navigationBarHidden(true)
     }
 }
