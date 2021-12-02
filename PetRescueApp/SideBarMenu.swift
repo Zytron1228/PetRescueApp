@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SideBarMenu: View {
-    @Binding var showMenu: Bool
+    @State public var home = Home()
+     @Binding public var showMenu: Bool
+    @State public var show = "Home"
     var body: some View {
 //        NavigationView {
             ZStack {
@@ -16,6 +18,14 @@ struct SideBarMenu: View {
                     VStack(alignment: .leading) {
                         Spacer()
                         Group {
+                            Button(action: {
+                                show = "Settings"
+                            }) {
+                                Text("Settings")
+                                    .padding(1.0)
+                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
+                                
+                            }
                             NavigationLink(destination: Home()) {
                                 Label("Home", systemImage: "house.fill")
                             }
@@ -73,6 +83,7 @@ struct SideBarMenu: View {
             .background(Color.black)
             
             .edgesIgnoringSafeArea(.all)
+            .zIndex(100)
             
             
 //        }
