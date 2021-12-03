@@ -13,8 +13,8 @@ import SwiftUI
     }
 }
 
-//struct Settings_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Settings(settings: $settings)
-//    }
-//}
+struct Settings_Previews: PreviewProvider {
+    static var previews: some View {
+        Settings()
+    }
+}

@@ -22,7 +22,7 @@ import SwiftUI
 //                            SideBarMenu
 //                                .frame(width: 175)
 //                                .edgesIgnoringSafeArea(.all)
-                            
+
 //                        }
 //                    }
 //                }
@@ -33,12 +33,12 @@ import SwiftUI
 //}
 
 struct Main: View {
-//@ObservedObject var homeScreen = Home()
-//@ObservedObject var setingsScreen = Settings()
-//    @ObservedObject var menuScreen = SideBarMenu()
-//    @Binding public var test = Test()
-//    @State public var home = Home()
-//    @State public var settings = Settings()
+    //@ObservedObject var homeScreen = Home()
+    //@ObservedObject var setingsScreen = Settings()
+    //    @ObservedObject var menuScreen = SideBarMenu()
+    //    @Binding public var test = Test()
+    //    @State public var home = Home()
+    //    @State public var settings = Settings()
     //     @Binding public var showMenu: Bool
     @State var show = "Info"
     @State var showing = Info()
@@ -60,7 +60,7 @@ struct Main: View {
                 .offset(x: -3, y: 9)
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-//                        Info()
+                        //                        Info()
                         Spacer()
                         Group {
                             Button(action: {
@@ -68,11 +68,11 @@ struct Main: View {
                             }) {
                                 HStack {
                                     Image(systemName: "house.fill")
-                                        
-                                Text("Home")
-                                    .padding(1.0)
+                                    
+                                    Text("Home")
+                                        .padding(1.0)
                                 }
-
+                                
                             }
                             
                             Button(action: {
@@ -80,10 +80,10 @@ struct Main: View {
                             }) {
                                 HStack {
                                     Image(systemName: "person.crop.circle")
-                                Text("Profile")
-                                    .padding(1.0)
+                                    Text("Profile")
+                                        .padding(1.0)
                                 }
-
+                                
                             }
                             
                             Button(action: {
@@ -91,8 +91,8 @@ struct Main: View {
                             }) {
                                 HStack {
                                     Image(systemName: "list.bullet.rectangle.portrait.fill")
-                                Text("Submit a Form")
-                                    .padding(1.0)
+                                    Text("Submit a Form")
+                                        .padding(1.0)
                                 }
                             }
                             
@@ -101,29 +101,29 @@ struct Main: View {
                             }) {
                                 HStack {
                                     Image(systemName: "magnifyingglass")
-                                Text("Search Pets")
-                                    .padding(1.0)
+                                    Text("Search Pets")
+                                        .padding(1.0)
                                 }
                             }
-
+                            
                             
                             Button(action: {
                                 show = "Settings"
                             }) {
                                 HStack {
                                     Image(systemName: "gearshape.fill")
-                                Text("Settings")
-                                    .padding(1.0)
+                                    Text("Settings")
+                                        .padding(1.0)
                                 }
                             }
-
+                            
                             Button(action: {
                                 show = "Help"
                             }) {
                                 HStack {
                                     Image(systemName: "questionmark.circle.fill")
-                                Text("Help")
-                                    .padding(1.0)
+                                    Text("Help")
+                                        .padding(1.0)
                                 }
                             }
                             
@@ -132,8 +132,8 @@ struct Main: View {
                             }) {
                                 HStack {
                                     Image(systemName: "info.circle")
-                                Text("Info")
-                                    .padding(1.0)
+                                    Text("Info")
+                                        .padding(1.0)
                                 }
                             }
                             
@@ -151,103 +151,91 @@ struct Main: View {
             .edgesIgnoringSafeArea(.all)
             .zIndex(menuVisable)
             .offset(x: -139)
-        ZStack {
-            
-        if show == "Home" {
-            Home()
-                .frame(width: 428, height: 926)
-                .ignoresSafeArea()
-                .background(Color.yellow)
-                .ignoresSafeArea()
-
-        }
-            
-            else if show == "Profile" {
-                Profile()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
-        
-            else if show == "Forms" {
-                Forms()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
-            
-            
-            else if show == "ListView" {
-                ListView()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
-            
-            else if show == "Setttings" {
-                Settings()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
-            
-            else if show == "Help" {
-                Help()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
-            
-            else if show == "Info" {
-                Info()
-                    .frame(width: 428, height: 926)
-                    .ignoresSafeArea()
-                    .background(Color.yellow)
-                    .ignoresSafeArea()
-            }
+            ZStack {
                 
-//            showing
-//                .frame(width: 428, height: 926)
-//                .ignoresSafeArea()
-//                .background(Color.yellow)
-//                .ignoresSafeArea()
-//                .padding()
-//                .offset(y: 40.911)
-            VStack {
-                Button(action: {
-                    print("Open Menu")
-                    MenuOpen.toggle()
-                }){
-                    Image(systemName: "line.3.horizontal")
-                        .resizable()
+                if show == "Home" {
+                    Home()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                    
                 }
-                .frame(width: 25, height: 15)
-                .padding()
-                .offset(x: -175)
                 
-            Spacer()
-            Text("This text shows up in all views, how weird... ")
-                Spacer()
+                else if show == "Profile" {
+                    Profile()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                }
+                
+                else if show == "Forms" {
+                    Forms()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                }
+                
+                
+                else if show == "ListView" {
+                    ListView()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                }
+                
+                else if show == "Settings" {
+                    Settings()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.red)
+                        .ignoresSafeArea()
+                }
+                
+                else if show == "Help" {
+                    Help()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                }
+                
+                else if show == "Info" {
+                    Info()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.yellow)
+                        .ignoresSafeArea()
+                }
+                
+//                else {
+//                    print("failed to load view: \(show)")
+//                }
+                
+                
+                VStack {
+                    Button(action: {
+                        print("Open Menu")
+                        MenuOpen.toggle()
+                    }){
+                        Image(systemName: "line.3.horizontal")
+                            .resizable()
+                    }
+                    .frame(width: 25, height: 15)
+                    .padding()
+                    .offset(x: -175)
+                    
+                    Spacer()
+                    Text("This text shows up in all views, how weird... ")
+                    Spacer()
+                }
+                .padding()
             }
-            .padding()
+            
         }
-//        .onAppear(perform: {
-//            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
-//                if show == "Settings" {
-//                    showing = Settings()
-//                }
-//                else if show == "Info" {
-//                    showing = Info()
-//                }
-//            }
-//        })
-
-    }
         .onAppear(perform: {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
                 if MenuOpen == true {
@@ -258,7 +246,7 @@ struct Main: View {
                 }
             }
         })
-}
+    }
 }
 
 struct Test_Previews: PreviewProvider {
