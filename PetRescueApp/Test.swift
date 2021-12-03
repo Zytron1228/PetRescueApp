@@ -40,8 +40,8 @@ struct Main: View {
 //    @State public var home = Home()
 //    @State public var settings = Settings()
     //     @Binding public var showMenu: Bool
-    @State var show = "Home"
-    @State var showing = Home()
+    @State var show = "Info"
+    @State var showing = Info()
     @State var MenuOpen = false
     @State var menuVisable = 0.0
     var body: some View {
@@ -66,59 +66,80 @@ struct Main: View {
                             Button(action: {
                                 show = "Home"
                             }) {
+                                HStack {
+                                    Image(systemName: "house.fill")
+                                        
                                 Text("Home")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
+                                }
 
                             }
                             
                             Button(action: {
                                 show = "Profile"
                             }) {
+                                HStack {
+                                    Image(systemName: "person.crop.circle")
                                 Text("Profile")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
+                                }
 
                             }
                             
                             Button(action: {
                                 show = "Forms"
                             }) {
-                                Text("Forms")
+                                HStack {
+                                    Image(systemName: "list.bullet.rectangle.portrait.fill")
+                                Text("Submit a Form")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
-
+                                }
                             }
+                            
+                            Button(action: {
+                                show = "ListView"
+                            }) {
+                                HStack {
+                                    Image(systemName: "magnifyingglass")
+                                Text("Search Pets")
+                                    .padding(1.0)
+                                }
+                            }
+
                             
                             Button(action: {
                                 show = "Settings"
                             }) {
+                                HStack {
+                                    Image(systemName: "gearshape.fill")
                                 Text("Settings")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
-
+                                }
                             }
 
                             Button(action: {
                                 show = "Help"
                             }) {
+                                HStack {
+                                    Image(systemName: "questionmark.circle.fill")
                                 Text("Help")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
-
+                                }
                             }
                             
                             Button(action: {
                                 show = "Info"
                             }) {
+                                HStack {
+                                    Image(systemName: "info.circle")
                                 Text("Info")
                                     .padding(1.0)
-                                    .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
-
+                                }
                             }
                             
                             
                         }
+                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                         .padding(10)
                         Spacer()
                     }
@@ -131,6 +152,7 @@ struct Main: View {
             .zIndex(menuVisable)
             .offset(x: -139)
         ZStack {
+            
         if show == "Home" {
             Home()
                 .frame(width: 428, height: 926)
@@ -150,6 +172,15 @@ struct Main: View {
         
             else if show == "Forms" {
                 Forms()
+                    .frame(width: 428, height: 926)
+                    .ignoresSafeArea()
+                    .background(Color.yellow)
+                    .ignoresSafeArea()
+            }
+            
+            
+            else if show == "ListView" {
+                ListView()
                     .frame(width: 428, height: 926)
                     .ignoresSafeArea()
                     .background(Color.yellow)
