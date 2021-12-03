@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
-
+final class SideBarMenu: ObservableObject {
 struct SideBarMenu: View {
-    @State public var home = Home()
-     @Binding public var showMenu: Bool
-    @State public var show = "Home"
-    var body: some View {
-//        NavigationView {
+    @ObservedObject var homeScreen = Home()
+    @ObservedObject var setingsScreen = Settings()
+//    @State public var test = Test()
+        @State public var home = Home()
+        @Binding public var showMenu: Bool
+        @State public var show = "Home"
+        var body: some View {
+            //        NavigationView {
             ZStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
+                        Info()
                         Spacer()
                         Group {
                             Button(action: {
@@ -26,7 +30,7 @@ struct SideBarMenu: View {
                                     .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                                 
                             }
-                            NavigationLink(destination: Home()) {
+                            NavigationLink(destination: Test()) {
                                 Label("Home", systemImage: "house.fill")
                             }
                             .offset(x: -3)
@@ -53,9 +57,9 @@ struct SideBarMenu: View {
                             .padding(1.0)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                             
-                            NavigationLink(destination: Settings()) {
-                                Label("Settings", systemImage: "gearshape.fill")
-                            }
+//                            NavigationLink(destination: Settings(showMenu: $showMenu)) {
+//                                Label("Settings", systemImage: "gearshape.fill")
+//                            }
                             .padding(1.0)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                             
@@ -72,8 +76,8 @@ struct SideBarMenu: View {
                             .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.434))
                             
                         }
-//                        .offset(y: 75)
-                      .padding(10)
+                        //                        .offset(y: 75)
+                        .padding(10)
                         Spacer()
                     }
                     Spacer()
@@ -86,8 +90,9 @@ struct SideBarMenu: View {
             .zIndex(100)
             
             
-//        }
-//        .navigationBarHidden(true)
+            //        }
+            //        .navigationBarHidden(true)
+        }
     }
 }
 

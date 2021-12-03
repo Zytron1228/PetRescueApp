@@ -11,7 +11,7 @@ import SwiftUI
 struct PetRescueAppApp: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+            Test()
         }
     }
 }

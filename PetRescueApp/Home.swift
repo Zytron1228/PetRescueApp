@@ -7,32 +7,33 @@
 
 import SwiftUI
 final class Home: ObservableObject {
-struct Home: View {
-   @State public var showMenu = false
-    var body: some View {
-        return NavigationView {
-            VStack {
-                GeometryReader { geometry in
-                    ZStack(alignment: .leading) {
-                        MainView(home: Home(), showMenu: $showMenu)
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                        if self.showMenu {
-                            SideBarMenu(home: Home(), showMenu: $showMenu)
-                                .frame(width: 175)
-                                .edgesIgnoringSafeArea(.all)
-
-                        }
-                    }
+    struct Home: View {
+        @State public var showMenu = false
+        var body: some View {
+            return NavigationView {
+                VStack {
+                    //                GeometryReader { geometry in
+                    //                    ZStack(alignment: .leading) {
+                    //                        MainView(home: Home(), showMenu: $showMenu)
+                    //                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    //                        if self.showMenu {
+                    //                            SideBarMenu(home: Home(), showMenu: $showMenu)
+                    //                                .frame(width: 175)
+                    //                                .edgesIgnoringSafeArea(.all)
+                    //
+                    //                        }
+                    //                    }
+                    //                }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            //        .navigationBarHidden(false)
         }
-        .navigationBarTitleDisplayMode(.inline)
-//        .navigationBarHidden(false)
     }
 }
-
+final class MainView: ObservableObject {
 struct MainView: View {
-   @State public var home = Home()
+    @State public var home = Home()
     @Binding public var showMenu: Bool
     var body: some View {
         VStack {
@@ -74,11 +75,11 @@ struct MainView: View {
         .ignoresSafeArea()
         
     }
-    
+  }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
+//struct Home_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Home(showMenu: self.showMenu)
+//    }
+//}
