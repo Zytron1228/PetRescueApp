@@ -7,8 +7,8 @@
 
 import SwiftUI
 struct Main: View {
-    @State var show = "Info"
-    @State var showing = Info()
+    @State public var show = "Home"
+    @State var showing = Home()
     @State var MenuOpen = false
     @State var menuVisable = 0.0
     var body: some View {
@@ -24,7 +24,7 @@ struct Main: View {
                 }
                 .frame(width: 25, height: 15)
                 .padding(30)
-                .offset(x: -3, y: 9)
+                .offset(x: -3, y: 24)
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Spacer()
@@ -123,7 +123,7 @@ struct Main: View {
                     Home()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                     
                 }
@@ -132,24 +132,41 @@ struct Main: View {
                     Profile()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
                 else if show == "Forms" {
-                    Forms()
+                    Forms(show: $show)
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
+                else if show == "Lost" {
+                    LostForm()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.blue)
+                        .ignoresSafeArea()
+                        .offset(y: -10)
+                }
+                
+                else if show == "Found" {
+                    FoundForm()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.blue)
+                        .ignoresSafeArea()
+                        .offset(y: -10)
+                }
                 
                 else if show == "ListView" {
                     ListView()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
@@ -157,7 +174,7 @@ struct Main: View {
                     Settings()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
@@ -165,7 +182,7 @@ struct Main: View {
                     Help()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
@@ -173,12 +190,17 @@ struct Main: View {
                     Info()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.yellow)
+                        .background(Color.blue)
                         .ignoresSafeArea()
                 }
                 
 //                else {
 //                    print("failed to load view: \(show)")
+//                Error()
+//                    .frame(width: 428, height: 926)
+//                    .ignoresSafeArea()
+//                    .background(Color.red)
+//                    .ignoresSafeArea()
 //                }
                 
                 
@@ -192,7 +214,7 @@ struct Main: View {
                     }
                     .frame(width: 25, height: 15)
                     .padding()
-                    .offset(x: -175)
+                    .offset(x: -175, y: 15)
                     
                     Spacer()
                     Text("This text shows up in all views, how weird... ")
@@ -215,7 +237,7 @@ struct Main: View {
     }
 }
 
-struct Test_Previews: PreviewProvider {
+struct Main_Previews: PreviewProvider {
     static var previews: some View {
         Main()
     }

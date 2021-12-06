@@ -9,39 +9,60 @@ import SwiftUI //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAÆAAAAAAAAAAAAAAAAAAAAAAA
 
 struct Forms: View {
     let color1 = Color.blue
+    @Binding public var show: String
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
                 color1.ignoresSafeArea(.all)
                 VStack {
                     Spacer()
-                    NavigationLink(destination: LostForm()) {
+                    Button(action: {
+                        show = "Lost"
+                        
+                    }) {
                         Text("I Have Lost A Pet")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color.yellow)
                             .bold()
                     }
-                    .navigationBarHidden(true)
+//                    NavigationLink(destination: LostForm()) {
+//                        Text("I Have Lost A Pet")
+//                            .font(.title)
+//                            .fontWeight(.heavy)
+//                            .foregroundColor(Color.yellow)
+//                            .bold()
+//                    }
+//                    .navigationBarHidden(true)
                     
                     Spacer()
-                    NavigationLink(destination: FoundForm()) {
+                    Button(action: {
+                        show = "Found"
+                        
+                    }) {
                         Text("I have Found A Pet")
                             .font(.title)
                             .fontWeight(.heavy)
                             .foregroundColor(Color.yellow)
                             .bold()
                     }
-                    .navigationBarHidden(true)
+//                    NavigationLink(destination: FoundForm()) {
+//                        Text("I have Found A Pet")
+//                            .font(.title)
+//                            .fontWeight(.heavy)
+//                            .foregroundColor(Color.yellow)
+//                            .bold()
+//                    }
+//                    .navigationBarHidden(true)
                     Spacer()
                 }
             }
-        }
+//        }
     }
 }
 
-struct Forms_Previews: PreviewProvider {
-    static var previews: some View {
-        Forms()
-    }
-}
+//struct Forms_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Forms(show: $show)
+//    }
+//}

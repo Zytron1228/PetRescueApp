@@ -10,10 +10,9 @@ import SwiftUI
 struct Home: View {
     var body: some View {
         VStack {
-                Text("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAÆA\nAA This is placeholder text. This is the homepage.\nAAAAAAAAAAAAAAAAAAAAA")
+                Text("This is placeholder text. This is the homepage.")
                 Image(systemName: "pawprint.fill")
                     .padding()
-
         }
   }
 }
