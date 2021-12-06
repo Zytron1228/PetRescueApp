@@ -202,8 +202,6 @@ struct Main: View {
 //                    .background(Color.red)
 //                    .ignoresSafeArea()
 //                }
-                
-                
                 VStack {
                     Button(action: {
                         print("Open Menu")
@@ -217,7 +215,8 @@ struct Main: View {
                     .offset(x: -175, y: 15)
                     
                     Spacer()
-                    Text("This text shows up in all views, how weird... ")
+                    //anything you put in this VStack shows up everywhere loaded by Main.swift except the side menu.
+//                    Text("this shows up everywhere. Weird...") //uncomment this out for example.
                     Spacer()
                 }
                 .padding()

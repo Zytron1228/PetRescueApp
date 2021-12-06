@@ -75,7 +75,7 @@ struct FoundForm: View {
                                 }) {
                                     Text("Dog")
                                 }
-
+                                
                                 
                                 Button(action: {
                                     AnimalType = "Other"
@@ -100,7 +100,7 @@ struct FoundForm: View {
                             VStack(alignment: .center) {
                                 VStack {
                                     List {
-                                            Text("*Specify Type of Animal:")
+                                        Text("*Specify Type of Animal:")
                                         GroupBox() {
                                             
                                             ZStack {
@@ -232,7 +232,7 @@ struct FoundForm: View {
                             VStack(alignment: .center) {
                                 VStack {
                                     List {
-                                            Text("*Specify Color of Animal:")
+                                        Text("*Specify Color of Animal:")
                                         GroupBox() {
                                             
                                             ZStack {
@@ -327,7 +327,7 @@ struct FoundForm: View {
                             VStack(alignment: .center) {
                                 VStack {
                                     List {
-                                            Text("Breed:")
+                                        Text("Breed:")
                                         GroupBox() {
                                             
                                             ZStack {
@@ -517,7 +517,7 @@ struct FoundForm: View {
                         }
                         Spacer()
                     }
-            
+                    
                 }
             }
         }

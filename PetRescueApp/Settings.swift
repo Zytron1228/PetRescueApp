@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-    struct Settings: View {
-        var body: some View {
-            Text("Settings WIP") 
-        
+struct Settings: View {
+    var body: some View {
+        Text("Settings WIP") 
     }
 }
 
