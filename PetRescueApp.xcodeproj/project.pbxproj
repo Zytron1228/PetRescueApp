@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		721FFB7E27596388003E8738 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FFB7D27596387003E8738 /* Test.swift */; };
+		721FFB7E27596388003E8738 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FFB7D27596387003E8738 /* Main.swift */; };
 		7249F7EF2755691D00A1D559 /* SideBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249F7EE2755691D00A1D559 /* SideBarMenu.swift */; };
 		72973388275554EF00C81A72 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973387275554EF00C81A72 /* Home.swift */; };
 		7297338A275556FA00C81A72 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72973389275556FA00C81A72 /* Settings.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		721FFB7D27596387003E8738 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		721FFB7D27596387003E8738 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		7249F7EE2755691D00A1D559 /* SideBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarMenu.swift; sourceTree = "<group>"; };
 		72973387275554EF00C81A72 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		72973389275556FA00C81A72 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				72CB7E6C273B133700A10A0F /* PetRescueAppApp.swift */,
-				721FFB7D27596387003E8738 /* Test.swift */,
+				721FFB7D27596387003E8738 /* Main.swift */,
 				7249F7EE2755691D00A1D559 /* SideBarMenu.swift */,
 				72973387275554EF00C81A72 /* Home.swift */,
 				7297338B2755597300C81A72 /* Profile.swift */,
@@ -176,7 +176,7 @@
 				7297339027555C9400C81A72 /* Info.swift in Sources */,
 				72CB7E6D273B133700A10A0F /* PetRescueAppApp.swift in Sources */,
 				7297339227555CA000C81A72 /* Help.swift in Sources */,
-				721FFB7E27596388003E8738 /* Test.swift in Sources */,
+				721FFB7E27596388003E8738 /* Main.swift in Sources */,
 				729B3F4F274D73FE0052C165 /* FoundForm.swift in Sources */,
 				7249F7EF2755691D00A1D559 /* SideBarMenu.swift in Sources */,
 				7297338A275556FA00C81A72 /* Settings.swift in Sources */,

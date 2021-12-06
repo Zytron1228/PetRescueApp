@@ -36,7 +36,6 @@ struct LostForm: View {
     @State var OtherInfo: String = ""
     
     var body: some View {
-        NavigationView {
             VStack {
                 Text("Lost Pet Form")
                     .font(.title2)
@@ -544,8 +543,6 @@ struct LostForm: View {
                 audioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
                 
             }
-        }
-        .navigationBarHidden(true)
     }
 }
 

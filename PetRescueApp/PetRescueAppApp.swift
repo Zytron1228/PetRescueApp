@@ -9,15 +9,9 @@ import SwiftUI
 
 @main
 struct PetRescueAppApp: App {
-//    init() {
-//        @Binding var show: String
-//        self.init
-//    }
-    
-//    @Binding public var show: String
+
     var body: some Scene {
         WindowGroup {
-//            Test(show: $show)
             Main()
         }
     }

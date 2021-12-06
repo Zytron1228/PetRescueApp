@@ -6,40 +6,7 @@
 //
 
 import SwiftUI
-
-//struct Test: View {
-//    @State public var showMenu = false
-//    @Binding var show: String
-//    @Binding public var test = Test()
-//    var body: some View {
-//        return NavigationView {
-//            VStack {
-//                GeometryReader { geometry in
-//                    ZStack(alignment: .leading) {
-//                Main(showMenu: $showMenu)
-//                            .frame(width: geometry.size.width, height: geometry.size.height)
-//                        if self.showMenu {
-//                            SideBarMenu
-//                                .frame(width: 175)
-//                                .edgesIgnoringSafeArea(.all)
-
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        .navigationBarTitleDisplayMode(.inline)
-//    }
-//}
-
 struct Main: View {
-    //@ObservedObject var homeScreen = Home()
-    //@ObservedObject var setingsScreen = Settings()
-    //    @ObservedObject var menuScreen = SideBarMenu()
-    //    @Binding public var test = Test()
-    //    @State public var home = Home()
-    //    @State public var settings = Settings()
-    //     @Binding public var showMenu: Bool
     @State var show = "Info"
     @State var showing = Info()
     @State var MenuOpen = false
@@ -60,7 +27,6 @@ struct Main: View {
                 .offset(x: -3, y: 9)
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        //                        Info()
                         Spacer()
                         Group {
                             Button(action: {
@@ -191,7 +157,7 @@ struct Main: View {
                     Settings()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
-                        .background(Color.red)
+                        .background(Color.yellow)
                         .ignoresSafeArea()
                 }
                 

@@ -37,7 +37,6 @@ struct Forms: View {
                 }
             }
         }
-//        .foregroundColor(.black)
     }
 }
 
