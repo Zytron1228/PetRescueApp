@@ -299,7 +299,7 @@ struct LostForm: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                 .cornerRadius(10)
-                                .offset(x: 50)
+                                .offset(x: 60)
                             Spacer()
                         }
                         
@@ -313,7 +313,7 @@ struct LostForm: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.75))
                                 .cornerRadius(10)
-                                .offset(x: 65)
+                                .offset(x: 56)
                             Spacer()
                         }
                         
