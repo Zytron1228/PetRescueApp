@@ -82,23 +82,13 @@ struct Main: View {
                                         .padding(1.0)
                                 }
                             }
-                            
+
                             Button(action: {
-                                show = "Help"
-                            }) {
-                                HStack {
-                                    Image(systemName: "questionmark.circle.fill")
-                                    Text("Help")
-                                        .padding(1.0)
-                                }
-                            }
-                            
-                            Button(action: {
-                                show = "Info"
+                                show = "Help/Info"
                             }) {
                                 HStack {
                                     Image(systemName: "info.circle")
-                                    Text("Info")
+                                    Text("Help & Info")
                                         .padding(1.0)
                                 }
                             }
@@ -178,15 +168,7 @@ struct Main: View {
                         .ignoresSafeArea()
                 }
                 
-                else if show == "Help" {
-                    Help()
-                        .frame(width: 428, height: 926)
-                        .ignoresSafeArea()
-                        .background(Color.blue)
-                        .ignoresSafeArea()
-                }
-                
-                else if show == "Info" {
+                else if show == "Help/Info" {
                     Info()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
@@ -202,6 +184,7 @@ struct Main: View {
 //                    .background(Color.red)
 //                    .ignoresSafeArea()
 //                }
+                
                 VStack {
                     Button(action: {
                         print("Open Menu")
