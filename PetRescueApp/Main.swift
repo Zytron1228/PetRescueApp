@@ -7,8 +7,8 @@
 
 import SwiftUI
 struct Main: View {
-    @State public var show = "Home"
-    @State var showing = Home()
+    @State public var show = "Forms"
+    @State var showing = ListView()
     @State var MenuOpen = false
     @State var menuVisable = 0.0
     var body: some View {
@@ -29,52 +29,73 @@ struct Main: View {
                     VStack(alignment: .leading) {
                         Spacer()
                         Group {
-                            Button(action: {
-                                show = "Home"
-                            }) {
-                                HStack {
-                                    if show == "Home" {
-                                        Image(systemName: "house.fill")
-                                            .foregroundColor(.white)
-                                            .offset(x: -5)
-                                        Text("Home")
-                                            .foregroundColor(.white)
-                                            .padding(1.0)
-                                            .offset(x: -6)
-                                    }
-                                    else {
-                                        Image(systemName: "house.fill")
-                                            .offset(x: -2)
-                                        Text("Home")
-                                            .padding(1.0)
-                                            .offset(x: -3)
-                                    }
-                                    
-                                }
-                                
-                            }
+                            //                            Button(action: {
+                            //                                show = "Home"
+                            //                            }) {
+                            //                                HStack {
+                            //                                    if show == "Home" {
+                            //                                        Image(systemName: "house.fill")
+                            //                                            .foregroundColor(.white)
+                            //                                            .offset(x: -5)
+                            //                                        Text("Home")
+                            //                                            .foregroundColor(.white)
+                            //                                            .padding(1.0)
+                            //                                            .offset(x: -6)
+                            //                                    }
+                            //                                    else {
+                            //                                        Image(systemName: "house.fill")
+                            //                                            .offset(x: -2)
+                            //                                        Text("Home")
+                            //                                            .padding(1.0)
+                            //                                            .offset(x: -3)
+                            //                                    }
+                            //
+                            //                                }
+                            //
+                            //                            }
                             
-                            Button(action: {
-                                show = "Profile"
-                            }) {
-                                HStack {
-                                    if show == "Profile" {
-                                        Image(systemName: "person.crop.circle")
-                                            .foregroundColor(.white)
-                                            .offset(x: -3)
-                                        Text("Profile")
-                                            .foregroundColor(.white)
-                                            .padding(1.0)
-                                            .offset(x: -3)
+                            //                            Button(action: {
+                            //                                show = "Profile"
+                            //                            }) {
+                            //                                HStack {
+                            //                                    if show == "Profile" {
+                            //                                        Image(systemName: "person.crop.circle")
+                            //                                            .foregroundColor(.white)
+                            //                                            .offset(x: -3)
+                            //                                        Text("Profile")
+                            //                                            .foregroundColor(.white)
+                            //                                            .padding(1.0)
+                            //                                            .offset(x: -3)
+                            //                                    }
+                            //                                    else {
+                            //                                        Image(systemName: "person.crop.circle")
+                            //                                        Text("Profile")
+                            //                                            .padding(1.0)
+                            //                                    }
+                            //                                }
+                            //
+                            //                            }
+
+                                    Button(action: {
+                                        show = "Search"
+                                    }) {
+                                        HStack {
+                                            if show == "Search" {
+                                                Image(systemName: "magnifyingglass")
+                                                    .foregroundColor(.white)
+                                                    .offset(x: -3)
+                                                Text("Search Pets")
+                                                    .foregroundColor(.white)
+                                                    .padding(1.0)
+                                                    .offset(x: -3)
+                                            }
+                                            else {
+                                                Image(systemName: "magnifyingglass")
+                                                Text("Search Pets")
+                                                    .padding(1.0)
+                                            }
+                                        }
                                     }
-                                    else {
-                                        Image(systemName: "person.crop.circle")
-                                        Text("Profile")
-                                            .padding(1.0)
-                                    }
-                                }
-                                
-                            }
                             
                             Button(action: {
                                 show = "Forms"
@@ -117,28 +138,6 @@ struct Main: View {
                                     }
                                 }
                             }
-                            
-                            Button(action: {
-                                show = "ListView"
-                            }) {
-                                HStack {
-                                    if show == "ListView" {
-                                        Image(systemName: "magnifyingglass")
-                                            .foregroundColor(.white)
-                                            .offset(x: -3)
-                                        Text("Search Pets")
-                                            .foregroundColor(.white)
-                                            .padding(1.0)
-                                            .offset(x: -3)
-                                    }
-                                    else {
-                                        Image(systemName: "magnifyingglass")
-                                        Text("Search Pets")
-                                            .padding(1.0)
-                                    }
-                                }
-                            }
-                            
                             
                             Button(action: {
                                 show = "Settings"
@@ -199,24 +198,24 @@ struct Main: View {
             .offset(x: -139)
             ZStack {
                 
-                if show == "Home" {
-                    Home()
-                        .frame(width: 428, height: 926)
-                        .ignoresSafeArea()
-                        .background(Color.blue)
-                        .ignoresSafeArea()
-                    
-                }
+//                if show == "Home" {
+//                    Home()
+//                        .frame(width: 428, height: 926)
+//                        .ignoresSafeArea()
+//                        .background(Color.blue)
+//                        .ignoresSafeArea()
+//
+//                }
+//
+//                else if show == "Profile" {
+//                    Profile()
+//                        .frame(width: 428, height: 926)
+//                        .ignoresSafeArea()
+//                        .background(Color.blue)
+//                        .ignoresSafeArea()
+//                }
                 
-                else if show == "Profile" {
-                    Profile()
-                        .frame(width: 428, height: 926)
-                        .ignoresSafeArea()
-                        .background(Color.blue)
-                        .ignoresSafeArea()
-                }
-                
-                else if show == "Forms" {
+                if show == "Forms" {
                     Forms(show: $show)
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
@@ -242,7 +241,7 @@ struct Main: View {
                         .offset(y: -10)
                 }
                 
-                else if show == "ListView" {
+                else if show == "Search" {
                     ListView()
                         .frame(width: 428, height: 926)
                         .ignoresSafeArea()
