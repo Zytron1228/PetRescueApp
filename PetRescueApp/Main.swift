@@ -266,14 +266,17 @@ struct Main: View {
                         .ignoresSafeArea()
                 }
                 
-                //                else {
-                //                    print("failed to load view: \(show)")
-                //                Error()
-                //                    .frame(width: 428, height: 926)
-                //                    .ignoresSafeArea()
-                //                    .background(Color.red)
-                //                    .ignoresSafeArea()
-                //                }
+                else {
+                    PageNotFound()
+                        .frame(width: 428, height: 926)
+                        .ignoresSafeArea()
+                        .background(Color.white)
+                        .ignoresSafeArea()
+                    Spacer()
+                    Text("Error message: ''failed to load view: \(show)''")
+                        .foregroundColor(.red)
+                        .offset(y: 40)
+                }
                 
                 VStack {
                     Button(action: {
@@ -289,7 +292,7 @@ struct Main: View {
                     
                     Spacer()
                     //anything you put in this VStack shows up everywhere loaded by Main.swift except the side menu.
-                    //                    Text("this shows up everywhere. Weird...") //uncomment this out for example.
+                    // Text("this shows up everywhere. Weird...") //uncomment this out for example.
                     Spacer()
                 }
                 .padding()
